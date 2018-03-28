@@ -54,3 +54,4 @@ source $HOME/.zsh/alias.zsh
 source $HOME/.zsh/git.zsh
 source $HOME/.zsh/prompt.zsh
 
+echo "$(w)"
