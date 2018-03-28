@@ -25,7 +25,7 @@ alias top10ram='ps aux | sort -rnk 4 | head'
 alias process='ps aux | grep -v grep | grep '
 alias timestamp='date "+%Y%m%d%H%M%S"'
 alias HUP='kill -HUP '
-
+alias lately='last | head'
 
 ## Sourcing ##
 alias reprof='. ~/.profile && echo "Resourcing .profile"'
