@@ -10,8 +10,8 @@ compinit
 #### HISTORY ####
 
 HISTFILE=~/.histfile
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=50000
+SAVEHIST=50000
 HISTCONTROL=ignoredups
 
 setopt append_history
@@ -54,4 +54,10 @@ source $HOME/.zsh/alias.zsh
 source $HOME/.zsh/git.zsh
 source $HOME/.zsh/prompt.zsh
 
+if [ -z $(command -v ddate) ];then
+   echo ''
+else
+   ddate
+fi  
 echo "$(w)"
+
