@@ -8,9 +8,16 @@ else
    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 fi 
 
-echo "Updating $HOME/.zsh/local.zsh"
-echo 'export NVM_DIR="$HOME/.nvm' >> $HOME/.zsh/local.zsh
-echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> $HOME/.zsh/local.zsh
+if grep -Fxq "$FILENAME" $HOME/.zsh/local.zsh
+then
+    echo " "
+    echo "!!! $HOME/.zsh/local.zsh has been previously updated. !!!"
+    echo " "
+else
+    echo "Updating $HOME/.zsh/local.zsh"
+    echo 'export NVM_DIR="$HOME/.nvm"' >> $HOME/.zsh/local.zsh
+    echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> $HOME/.zsh/local.zsh
+fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
