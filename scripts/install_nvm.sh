@@ -8,7 +8,8 @@ else
    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 fi 
 
-if grep -Fxq "$FILENAME" $HOME/.zsh/local.zsh
+TEST_LINE_1='export NVM_DIR="$HOME/.nvm"'
+if grep -Fxq "$TEST_LINE_1" $HOME/.zsh/local.zsh
 then
     echo " "
     echo "!!! $HOME/.zsh/local.zsh has been previously updated. !!!"
