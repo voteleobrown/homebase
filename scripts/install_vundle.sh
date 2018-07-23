@@ -7,8 +7,5 @@ sed -i '/" BEGIN VUNDLE/,/" END VUNDLE/d' $HOME/.vimrc
 echo "Inserting new configuration from vundle.txt."
 cat vundle.txt >> $HOME/.vimrc
 
-echo "Deleting old bundles if present."
-rm -r $HOME/.vim/bundles
-
 echo "Installing Vundle plugins."
 vim +PluginInstall +qall
