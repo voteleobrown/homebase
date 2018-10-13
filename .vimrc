@@ -20,6 +20,8 @@ set incsearch       "search as characters are typed
 " IDE "
 syntax enable
 
+" Key Mapping "
+:map <c-s> :w <return>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                                          "
