@@ -41,6 +41,7 @@ alias ls='ls -F'
 ## Alternative Commands ##
 alias del='yes | rm -r'
 alias cp='cp -r'
+alias uuid="python -c 'import sys,uuid; print(uuid.uuid4().hex)'"
 
 # Keep it short
 alias c='clear'
