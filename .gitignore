@@ -1,3 +1,5 @@
 .zsh/local.zsh
 *~
+.vim/bundle
+.vim/after
 

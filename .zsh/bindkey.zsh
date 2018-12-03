@@ -15,4 +15,5 @@ bindkey '^[x' instert-last-command-output
 # ctrl-space : print Git status
 bindkey -s '^ ' ' git status --short^M'
 
-
+# <ctrl-p> : git push
+bindkey -s '^p' ' git push^M'
