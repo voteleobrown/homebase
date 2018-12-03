@@ -72,4 +72,8 @@ alias lse='ls -ld -- (*/^F)'				# Only show empty directories
 alias lsen='ls -d *(/om[1])'				# Newest directory
 alias lsx='ls -l -- *(*) | head $@ @&> /devl/null'	# Only show executables
 
+# vim-like
+alias :q='exit'
+alias :w='git add .'
+
 #### END ALIASES ####

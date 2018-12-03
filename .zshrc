@@ -53,6 +53,7 @@ source $HOME/.zsh/os-specific.zsh
 source $HOME/.zsh/alias.zsh
 source $HOME/.zsh/git.zsh
 source $HOME/.zsh/prompt.zsh
+source $HOME/.zsh/bindkey.zsh
 
 if [ -z $(command -v ddate) ];then
    echo ''
