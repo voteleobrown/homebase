@@ -20,8 +20,9 @@ set incsearch       "search as characters are typed
 " IDE "
 syntax enable
 
-" Key Mapping "
 :map <c-s> :w <return>
+
+:map <c-d> :setlocal nospell <return>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                                          "
@@ -42,3 +43,33 @@ set clipboard=unnamed           " set clipboard to unnamed to access the system 
 syntax on                       " turn syntax highlighting on by default
 
 filetype off                  " required
+" BEGIN VUNDLE
+
+""""""""""""""""""""""""""""""""""""""""""""""""
+"					       "
+"        Vundle                                "
+"                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" " alternatively, pass a path where Vundle should install plugins
+" "call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+"Plugin 'jceb/vim-orgmode'
+"Plugin 'tpope/vim-speeddating'
+Plugin 'elixir-editors/vim-elixir'
+Plugin 'gabrielelana/vim-markdown'
+Plugin 'Yggdroot/indentLine'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" END VUNDLE
