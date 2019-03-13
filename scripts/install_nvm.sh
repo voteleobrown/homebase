@@ -28,4 +28,4 @@ export NVM_DIR="$HOME/.nvm"
 echo "Installing Node..."
 nvm install node
 
-
+rezsh
