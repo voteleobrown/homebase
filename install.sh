@@ -1,11 +1,19 @@
+#!/bin/bash
+
+echo "Installing base applications..."
 ./scripts/install_apt_base.sh
 
+echo "Copying config files to home directory..."
 cp -r .tmux.conf $HOME
 cp -r .vim $HOME
 cp -r .vimrc $HOME
 cp -r .zsh $HOME
 cp -r .zshrc $HOME
 touch .zsh/local.zsh
+
+echo "Changing defualt shell to ZSH..."
+sudo chsh $USER -s /bin/zsh
+
 
 read -n1 -p "Install vundle plugins for vim? [y,n]" vundleresp 
 case $vundleresp in  
