@@ -1,5 +1,5 @@
 # Extract Phoenix app upstream for better readability
-upstream phoenixappp {
+upstream phoenixapp {
   server localhost:4000;
 }
 
@@ -8,7 +8,7 @@ upstream phoenixappp {
 
 server {
 	listen 80 default_server;
-	listen [::]:80 defaut_server;
+	listen [::]:80 default_server;
 	server_name ${hostname};
 
 	return 301 https://$server_name$request_uri;
