@@ -28,7 +28,7 @@ read DOMAIN
 sudo service nginx stop
 sudo certbot certonly --standalone -d $DOMAIN
 cp nginx_default.template default
-sed -e "s/\${hostname}/$DOMAIN/" default
+sed -e "s/\${hostname}/$DOMAIN/" default > default
 sudo mv default /etc/nginx/sites-available/default
 sudo service nginx start
 
