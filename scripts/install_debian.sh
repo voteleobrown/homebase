@@ -38,18 +38,5 @@ touch .zsh/local.zsh
 echo "Changing defualt shell to ZSH..."
 sudo chsh $USER -s /bin/zsh
 
-
-read -n1 -p "Install vundle plugins for vim? [y,n]" vundleresp 
-case $vundleresp in  
-	y|Y) echo "Installing Vundle plugins..." && cd $HOMEBASE_DIR/scripts && ./install_vundle.sh && cd $HOMEBASE_DIR ;; 
-	n|N) echo "Vundle plugins not installed." ;; 
-	*) echo "Vundle plugins not installed" ;; 
-esac
-
-read -n1 -p "Install asdf version manager? [y,n]" asdfresp 
-case $asdfresp in  
-	y|Y) echo "Installing Vundle plugins..." && cd $HOMEBASE_DIR/scripts && ./debian_install_asdf.sh && cd $HOMEBASE_DIR && install_erl && install_node ;; 
-	n|N) echo "asdf version manager not installed." ;; 
-	*) echo "asdf version manager not installed." ;; 
-esac
-
+install_erl
+install_node
