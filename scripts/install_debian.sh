@@ -1,7 +1,31 @@
 #!/bin/bash
 
+HOMEBASE_DIR=$(pwd)
+
+install_erl() {
+  while true; do
+    read -r -n 1 -p "Install erlang and elixir?" REPLY
+    case $REPLY in
+	[yY]) cd $HOMEBASE_DIR/scripts && ./debian_install_erl.sh && cd $HOMEBASE_DIR ;;
+	[nN]) echo "Erland and Elixir not installed." ;;
+	*) printf " \033[31m %s \n\033[0m" "invalid input" ;;
+    esac
+  done
+}
+
+install_node() {
+  while true; do
+    read -r -n 1 -p "Install nodejs?" REPLY
+    case $REPLY in
+	[yY]) cd $HOMEBASE_DIR/scripts && ./debian_install_node.sh && cd $HOMEBASE_DIR ;;
+	[nN]) echo "Nodejs not installed." ;;
+	*) printf " \033[31m %s \n\033[0m" "invalid input" ;;
+    esac
+  done
+}
+
 echo "Installing base applications..."
-./scripts/install_apt_base.sh
+./scripts/debian_install_base.sh
 
 echo "Copying config files to home directory..."
 cp -r .tmux.conf $HOME
@@ -17,28 +41,15 @@ sudo chsh $USER -s /bin/zsh
 
 read -n1 -p "Install vundle plugins for vim? [y,n]" vundleresp 
 case $vundleresp in  
-	y|Y) echo "Installing Vundle plugins..." && cd scripts && ./install_vundle.sh && cd .. ;; 
+	y|Y) echo "Installing Vundle plugins..." && cd $HOMEBASE_DIR/scripts && ./install_vundle.sh && cd $HOMEBASE_DIR ;; 
 	n|N) echo "Vundle plugins not installed." ;; 
 	*) echo "Vundle plugins not installed" ;; 
 esac
 
-read -n1 -p "Install Node? [y,n]" npmresp 
-case $npmresp in  
-	y|Y) echo "Installing Node..." && cd scripts && ./install_nvm.sh && cd .. ;; 
-	n|N) echo "Node not installed." ;; 
-	*) echo "Node not installed" ;; 
+read -n1 -p "Install asdf version manager? [y,n]" asdfresp 
+case $asdfresp in  
+	y|Y) echo "Installing Vundle plugins..." && cd $HOMEBASE_DIR/scripts && ./debian_install_asdf.sh && cd $HOMEBASE_DIR && install_erl && install_node ;; 
+	n|N) echo "asdf version manager not installed." ;; 
+	*) echo "asdf version manager not installed." ;; 
 esac
 
-read -n1 -p "Install Python 3 [y,n]" doit 
-case $doit in  
-	y|Y) echo "Installing Python 3..." && cd scripts && ./install_python3.sh && cd .. ;; 
-	n|N) echo "Python 3 not installed." ;; 
-	*) echo "Python 3 not installed" ;; 
-esac
-
-read -n1 -p "Install asdf, erlang, and elixir?" doit
-case $doit in
-	y|Y) echo "Installing asdf, erlang, and elixir..." && cd scripts && ./install_asdf.sh && cd .. ;;
-	n|N) echo "asdf, erlang, and elixir not installed." ;;
-	*) echo "asdf, erlang, and elixir not install." ;;
-esac

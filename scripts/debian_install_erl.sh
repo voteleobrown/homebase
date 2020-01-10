@@ -1,10 +1,5 @@
 #!/bin/bash
-sudo apt-get install automake autoconf libreadline-dev libncurses-dev libssl-dev libyaml-dev libxslt-dev libffi-dev libtool unixodbc-dev
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf
-
-echo -e '\n. $HOME/.asdf/asdf.sh' >> ~/.zsh/local.zsh
-echo -e '\n. $HOME/.asdf/completions/asdf.bash' >> ~/.zsh/local.zsh
-source ~/.zshrc
+sudo apt-get install libncurses5-dev inotify-tools
 
 asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
 asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
