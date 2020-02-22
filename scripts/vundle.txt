@@ -22,6 +22,7 @@ Plugin 'tpope/vim-speeddating'
 Plugin 'elixir-editors/vim-elixir'
 Plugin 'gabrielelana/vim-markdown'
 Plugin 'Yggdroot/indentLine'
+Plugin 'solyaris/ChatScript.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
