@@ -9,7 +9,8 @@ case "$OSTYPE" in
 		  *debian*)    ./scripts/install_debian.sh ;;
 		  *fedora*)    echo "Fedora-like OS";;
 		  *)           echo "unknown: $ID_LIKE";;
-	  esac	  
+	  esac
+	  ;;
   bsd*)     echo "BSD" ;;
   msys*)    echo "WINDOWS" ;;
   *)        echo "unknown: $OSTYPE" ;;
