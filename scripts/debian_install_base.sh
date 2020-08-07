@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo apt-get install zsh vim tmux ddate build-essential net-tools automake autoconf libreadline-dev libncurses-dev libssl-dev libyaml-dev libxslt-dev libffi-dev libtool unixodbc-dev curl
+sudo apt-get install zsh vim tmux ddate build-essential net-tools automake autoconf libreadline-dev libncurses5-dev libssl-dev libyaml-dev libxslt-dev libffi-dev libtool unixodbc-dev curl
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf
 
 echo -e '\n. $HOME/.asdf/asdf.sh' >> ~/.zsh/local.zsh
