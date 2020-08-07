@@ -77,6 +77,6 @@ alias :q='exit'
 alias :w='git add .'
 alias :c='git commit'
 alias :wc='git add . && git commit'
-alias :wq='echo "You are not actually in vim."
+alias :wq='echo "You are not actually in vim."'
 
 #### END ALIASES ####

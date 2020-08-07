@@ -6,7 +6,7 @@ case "$OSTYPE" in
   linux*)
 	  ID_LIKE=$(cat /etc/os-release | grep ID_LIKE)
 	  case "$ID_LIKE" in
-		  *debian*)    ./scripts/install_debian.sh ;;
+		  *debian*)    echo "Debian-based distributrion detected..." && ./scripts/install_debian.sh ;;
 		  *fedora*)    echo "Fedora-like OS";;
 		  *)           echo "unknown: $ID_LIKE";;
 	  esac
