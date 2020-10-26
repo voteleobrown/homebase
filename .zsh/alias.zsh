@@ -36,7 +36,7 @@ alias rezsh='.  ~/.zshrc && echo "Resourcing .zshrc"'
 alias tmux='tmux -u'				# UTF-8 mode
 alias su='su -'					# Adopt user shell
 alias wget='wget -c'				# Resume by default
-alias ls='ls -F'
+alias ls='ls -F --color'
 
 ## Alternative Commands ##
 alias del='yes | rm -r'
