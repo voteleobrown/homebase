@@ -51,7 +51,7 @@ autoload -U zcalc
 source $HOME/.zsh/local.zsh
 source $HOME/.zsh/os-specific.zsh
 source $HOME/.zsh/alias.zsh
-source $HOME/.zsh/git.zsh
+source $HOME/.zsh/new-git.zsh
 source $HOME/.zsh/prompt.zsh
 source $HOME/.zsh/bindkey.zsh
 

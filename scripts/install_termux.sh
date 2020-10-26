@@ -4,12 +4,7 @@ echo "Installing base applications..."
 ./scripts/install_termux_base.sh
 
 echo "Copying config files to home directory..."
-cp -r .tmux.conf $HOME
-cp -r .vim $HOME
-cp -r .vimrc $HOME
-cp -r .zsh $HOME
-cp -r .zshrc $HOME
-touch .zsh/local.zsh
+./scripts/copy_dotfiles.sh
 
 echo "Changing defualt shell to ZSH..."
 sudo chsh $USER -s /bin/zsh
