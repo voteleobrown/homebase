@@ -25,6 +25,7 @@ RPROMPT="%{$fg_bold[cyan]%}[$(date +"%a %m/%d") %t]%{$reset_color%}"
 
 autoload -U add-zsh-hook
 add-zsh-hook chpwd update_prompt
+add-zsh-hook precmd update_prompt
 function update_prompt() {
 	PROMPT=$(prompt_funk)
 }
