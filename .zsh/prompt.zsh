@@ -9,8 +9,13 @@ CYAN="%{$fg_bold[cyan]%}"
 RESET_COLOR="%{$reset__color%}"
 
 
+# Echoes a username/host string when connected over SSH (empty otherwise)
+function ssh_info() {
+  [[ "$SSH_CONNECTION" != '' ]] && echo '$CYAN%n$YELLOW@$CYAN%m$YELLOW' || echo '$CYAN%n$YELLOW@$CYAN%m$YELLOW' # echo '$CYAN'
+}
+
 function prompt_funk() {
-	echo "$CYAN%n$YELLOW@$CYAN%m$YELLOW %~$CYAN $(git_info)%(?.%{$fg[blue]%}.%{$fg[red]%})%(!.#.❯)%{$reset_color%} "
+	echo "$(ssh_info) %~$CYAN $(git_info)%(?.%{$fg[yellow]%}.%{$fg[yellow]%})%(!.#.❯)%{$reset_color%} "
 }
 
 PROMPT=$(prompt_funk)

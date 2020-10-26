@@ -1,10 +1,6 @@
 setopt prompt_subst
 autoload -U colors && colors # Enable colors in prompt
 
-# Echoes a username/host string when connected over SSH (empty otherwise)
-ssh_info() {
-  [[ "$SSH_CONNECTION" != '' ]] && echo '%(!.%{$fg[red]%}.%{$fg[yellow]%})%n%{$reset_color%}@%{$fg[green]%}%m%{$reset_color%}:' || echo ''
-}
 
 # Echoes information about Git repository status when inside a Git repository
 git_info() {
@@ -57,7 +53,7 @@ git_info() {
   [ -n "$GIT_STATUS" ] && GIT_INFO+=( "$GIT_STATUS" )
   [[ ${#DIVERGENCES[@]} -ne 0 ]] && GIT_INFO+=( "${(j::)DIVERGENCES}" )
   [[ ${#FLAGS[@]} -ne 0 ]] && GIT_INFO+=( "${(j::)FLAGS}" )
-  GIT_INFO+=( "\033[38;5;15m$GIT_LOCATION%{$reset_color%}" )
+  GIT_INFO+=( "\033[38;5;15m$CYAN$GIT_LOCATION%{$reset_color%}" )
   echo "${(j: :)GIT_INFO}"
 
 }
