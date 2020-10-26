@@ -1,7 +1,7 @@
 #########################################
-#					#
-# 		ALIASES 		#
-#					#
+#				                              	#
+# 		ALIASES 	                      	#
+#				                              	#
 #########################################
 
 
@@ -36,7 +36,7 @@ alias rezsh='.  ~/.zshrc && echo "Resourcing .zshrc"'
 alias tmux='tmux -u'				# UTF-8 mode
 alias su='su -'					# Adopt user shell
 alias wget='wget -c'				# Resume by default
-alias ls='ls -F --color'
+alias ls='ls -FG'
 
 ## Alternative Commands ##
 alias del='yes | rm -r'
@@ -65,6 +65,7 @@ alias wwi='cd -'				# "Where was I?"
 
 
 # ls shortcuts
+alias ll='ls -lF'
 alias lad='ls -d -- .*(/)'				# Only show dot-directories
 alias lsa='ls -a -- .*(.)'				# Only show dot-files
 alias lsd='ls -d -- *(/)'				# Only show directories
