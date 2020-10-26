@@ -11,7 +11,7 @@ RESET_COLOR="%{$reset__color%}"
 
 # Echoes a username/host string when connected over SSH (empty otherwise)
 function ssh_info() {
-  [[ "$SSH_CONNECTION" != '' ]] && echo '$CYAN%n$YELLOW@$CYAN%m$YELLOW' || echo '$CYAN%n$YELLOW@$CYAN%m' # echo '$CYAN'
+  [[ "$SSH_CONNECTION" != '' ]] && echo '$CYAN%n$YELLOW@$CYAN%m' || echo '$CYAN%n$YELLOW@$CYAN%m' # echo ''
 }
 
 function prompt_funk() {
