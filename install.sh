@@ -1,7 +1,7 @@
 #!/bin/bash
 case "$OSTYPE" in
   solaris*) echo "SOLARIS" ;;
-  darwin*)  echo "OSX" ;; 
+  darwin*)  echo "MacOS detected" && ./scripts/install_macos.sh ;; 
   linux-android) ./scripts/install_termux.sh ;;
   linux*)
 	  ID=$(cat /etc/os-release | grep ID)
