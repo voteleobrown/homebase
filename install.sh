@@ -8,7 +8,7 @@ case "$OSTYPE" in
 	  case "$ID" in
 		  *debian*)    echo "Debian-based distributrion detected..." && ./scripts/install_debian.sh ;;
 		  *fedora*)    echo "Fedora-like OS";;
-		  *)           echo "unknown: $ID_LIKE";;
+		  *)           echo "unknown: $ID";;
 	  esac
 	  ;;
   bsd*)     echo "BSD" ;;
