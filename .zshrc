@@ -1,11 +1,19 @@
-zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
-zstyle ':completion:*' max-errors 1 not-numeric
-zstyle ':completion:*' prompt '%e'
-zstyle :compinstall filename '/home/waterhouse/.zshrc'
+#
+# Executes commands at the start of an interactive session.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
 
-autoload -Uz compinit
-compinit
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
 
+# Customize to your needs...
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 #### HISTORY ####
 
@@ -51,8 +59,8 @@ autoload -U zcalc
 source $HOME/.zsh/local.zsh
 source $HOME/.zsh/os-specific.zsh
 source $HOME/.zsh/alias.zsh
-source $HOME/.zsh/new-git.zsh
-source $HOME/.zsh/prompt.zsh
+# source $HOME/.zsh/new-git.zsh
+# source $HOME/.zsh/prompt.zsh
 source $HOME/.zsh/bindkey.zsh
 
 if [ -z $(command -v ddate) ];then
@@ -62,3 +70,6 @@ else
 fi  
 echo "$(w)"
 
+autoload -Uz promptinit
+promptinit
+prompt powerlevel10k
