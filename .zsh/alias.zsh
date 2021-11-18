@@ -26,6 +26,7 @@ alias process='ps aux | grep -v grep | grep '
 alias timestamp='date "+%Y%m%d%H%M%S"'
 alias HUP='kill -HUP '
 alias lately='last | head'
+alias bat="upower -i `upower -e | grep 'BAT'`"
 
 ## Sourcing ##
 alias reprof='. ~/.profile && echo "Resourcing .profile"'
