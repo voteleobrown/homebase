@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e # Exit immediately if a command fails
 case "$OSTYPE" in
   solaris*) echo "SOLARIS" ;;
   darwin*)  echo "MacOS detected" && ./scripts/install_macos.sh ;; 
